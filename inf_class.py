@@ -16,7 +16,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 percentage = 0
 MODEL_PATH = "Unet-diagdataset.pt"
 model = torch.load(MODEL_PATH)
-image_topic =  "/zed2/zed_node/rgb/image_rect_color"
+image_topic =  "/zed/zed_node/rgb/image_rect_color"
 road_percentage_pub = rospy.Publisher('cv_nav/road_percentage', Float64, queue_size=1)
 road_percentage_msg = Float64()
 
