@@ -23,11 +23,12 @@ left_box_pub = rospy.Publisher('cv_nav/road_percentage/left', Float64, queue_siz
 image_topic =  "/zed/zed_node/rgb/image_rect_color"
 road_percentage_msg = Float64()
 
+
 # Bounding box metadata. Each bounding box is described by [publisher, x_min, x_max, y_min, y_max]
-forward_box_info = [forward_box_pub, 248, 328, 35, 385]
-rotate_box_info = [rotate_box_pub, 200, 368, 300, 385]
-right_box_info = [right_box_pub, 320, 640, 100, 300]
-left_box_info = [left_box_pub, 0, 320, 100, 300]
+forward_box_info = [forward_box_pub, 248, 328, 35, 385] # 250 391 250 320
+rotate_box_info = [rotate_box_pub, 160, 481, 270, 311]
+right_box_info = [right_box_pub, 440, 641, 100, 281]
+left_box_info = [left_box_pub, 0, 201, 100, 281]
 bounding_boxes = [forward_box_info, rotate_box_info, right_box_info, left_box_info]
 
 
