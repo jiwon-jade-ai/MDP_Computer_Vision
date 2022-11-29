@@ -25,7 +25,7 @@ road_percentage_msg = Float64()
 
 
 # Bounding box metadata. Each bounding box is described by [publisher, x_min, x_max, y_min, y_max]
-forward_box_info = [forward_box_pub, 248, 328, 35, 385] # 250 391 250 320
+forward_box_info = [forward_box_pub, 250, 391, 250, 321] # 250 391 250 320
 rotate_box_info = [rotate_box_pub, 160, 481, 270, 311]
 right_box_info = [right_box_pub, 440, 641, 100, 281]
 left_box_info = [left_box_pub, 0, 201, 100, 281]
