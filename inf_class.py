@@ -17,19 +17,21 @@ model = torch.load(MODEL_PATH)
 
 # Topic publishers
 forward_box_pub = rospy.Publisher('cv_nav/road_percentage/forward', Float64, queue_size=1)
-rotate_box_pub = rospy.Publisher('cv_nav/road_percentage/rotate', Float64, queue_size=1)
-right_box_pub = rospy.Publisher('cv_nav/road_percentage/right', Float64, queue_size=1)
+rotateLeft_box_pub = rospy.Publisher('cv_nav/road_percentage/rotateRight', Float64, queue_size=1)
+rotateRight_box_pub = rospy.Publisher('cv_nav/road_percentage/rotateLeft', Float64, queue_size=1)
 left_box_pub = rospy.Publisher('cv_nav/road_percentage/left', Float64, queue_size=1)
+right_box_pub = rospy.Publisher('cv_nav/road_percentage/right', Float64, queue_size=1)
 image_topic =  "/zed/zed_node/rgb/image_rect_color"
 road_percentage_msg = Float64()
 
 
 # Bounding box metadata. Each bounding box is described by [publisher, x_min, x_max, y_min, y_max]
 forward_box_info = [forward_box_pub, 250, 391, 250, 321] # 250 391 250 320
-rotate_box_info = [rotate_box_pub, 160, 481, 270, 311]
-right_box_info = [right_box_pub, 440, 641, 100, 281]
+rotateLeft_box_info = [rotateLeft_box_pub, 160, 321, 270, 311]
+rotateRight_box_info = [rotateRight_box_pub, 320, 481, 270, 311]
 left_box_info = [left_box_pub, 0, 201, 100, 281]
-bounding_boxes = [forward_box_info, rotate_box_info, right_box_info, left_box_info]
+right_box_info = [right_box_pub, 440, 641, 100, 281]
+bounding_boxes = [forward_box_info, rotateLeft_box_info, rotateRight_box_info, right_box_info, left_box_info]
 
 
 def callback_image(msg):
